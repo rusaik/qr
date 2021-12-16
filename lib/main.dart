@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr/qr_generator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final message =
+  // ignore: lines_longer_than_80_chars
+      'Hey this is a QR code. Change this value in the main_screen.dart file.';
   int _counter = 0;
 
   void _incrementCounter() {
@@ -69,7 +73,33 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
+    return  Material(
+      color: Colors.white,
+      child: SafeArea(
+        top: true,
+        bottom: true,
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Center(
+                  child: Container(
+                    width: 280,
+                    child:  QRGenerator(message: message,),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
+                    .copyWith(bottom: 40),
+                child: Text(message),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    /*Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -110,6 +140,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    );*/
   }
 }
