@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+//import 'package:qr_flutter/qr_flutter.dart';
 
 class QRGenerator extends StatefulWidget {
   final String message;
-  const QRGenerator({Key? key, required this.message }) : super(key: key);
+
+  const QRGenerator({Key? key, required this.message}) : super(key: key);
 
   @override
   _QRGeneratorState createState() => _QRGeneratorState();
@@ -12,7 +13,8 @@ class QRGenerator extends StatefulWidget {
 class _QRGeneratorState extends State<QRGenerator> {
   @override
   Widget build(BuildContext context) {
-    return QrImage(
+    return Text(
+        'GR Generator to be added '); /*QrImage(
       data: widget.message,
       version: 1,
       size: 320,
@@ -27,6 +29,6 @@ class _QRGeneratorState extends State<QRGenerator> {
           ),
         );
       },*/
-    );
+    );*/
   }
 }
